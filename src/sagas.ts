@@ -6,7 +6,6 @@ function* callLoadVerbatim(action: Action<number>) {
     console.log(verbatimId);
 }
 
-
 function* watchLoadVerbatim() {
     yield takeLatest("something", callLoadVerbatim);
 }

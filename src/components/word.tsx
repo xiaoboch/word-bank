@@ -1,28 +1,43 @@
 import * as React from "react";
-import {IWord} from "../types";
-import {Synonym} from "./synonym";
-import {WordExplain} from "./wordExplain";
+import {Glyphicon, Well} from "react-bootstrap";
+import {connect} from "react-redux";
+import {IRootState, IWord, IWordBankGeneric} from "../types";
+import {Interpretation} from "./interpretation";
 
 interface IProps {
-    word: IWord;
+    wordId: number;
 }
 
-export function Word({word}: IProps){
+interface IState {
+    words: IWordBankGeneric<IWord>;
+}
+
+export function WordCore({wordId, words}: IProps & IState) {
+
+    const word = words.byId[wordId];
+
     return (
-        <div className="word">
-            <div className="label">
+        <Well className="word">
+            <h4 className="word-icon"><Glyphicon glyph="bookmark"/></h4>
+            <div className="word-label">
                 {word.word}
             </div>
             <div className="explains">
-                {word.wordExplain.map(explain => {
-                  return <WordExplain wordExplain={explain} />
-                })}
+            {word.interpretations.map(id => {
+            return <Interpretation key={id} interpretationId={id}/>;
+            })}
             </div>
-            <div className="synonyms">
-                {word.synonyms.map(syno => {
-                    return <Synonym synonym={syno} />
-                })}
-            </div>
-        </div>
+            {/*<div className="synonyms">*/}
+            {/*{word.synonyms.map(synonym => {*/}
+            {/*return <Synonym key={synonym.id} synonym={synonym}/>;*/}
+            {/*})}*/}
+            {/*</div>*/}
+        </Well>
     );
 }
+
+function mapStateToProps(state: IRootState): IState {
+    return {words: state.words};
+}
+
+export const Word = connect(mapStateToProps)(WordCore);

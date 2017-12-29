@@ -1,23 +1,40 @@
 export interface IRootState {
-    words: IWord[];
-    language: string;
-    newWordGroup: IWord;
+    words: IWordBankGeneric<IWord>;
+    examples: IWordBankGeneric<IExample>;
+    interpretations: IWordBankGeneric<IInterpretation>;
+    newWord: IWord;
+}
+
+export interface IWordBankGeneric<T> {
+    byId: {[id: number]: T};
+    allIds: number[];
+}
+
+export interface IKey {
+    id: number;
 }
 
 export interface IWord {
     id: number;
     word: string;
-    wordExplain: IWordExplain[];
-    prefix: string;
-    root: string[];
-    rootExplain: string;
-    suffix: string;
-    synonyms: IWord[];
-    createdAt: Date;
+    prefix?: string;
+    root?: string[];
+    rootExplain?: string;
+    suffix?: string;
+    synonyms?: number[];
+    interpretations: number[];
+    similarWords?: number[];
+    createdAt?: Date;
 }
 
-export interface IWordExplain {
-    type: string
+export interface IInterpretation {
+    id: number;
+    type: string;
     explain: string;
-    examples: string[];
+    examples: number[];
+}
+
+export interface IExample {
+    id: number;
+    sentence: string;
 }

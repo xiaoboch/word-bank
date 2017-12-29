@@ -1,3 +1,53 @@
- .word {
+.word-label {
+    background-color: cadetblue;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: auto;
+    display: inline-block;
+    margin-left: 0.5em;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 
- }
+.word-interpretation {
+    margin-top: 3px;
+}
+
+.explain {
+    display: inline-block;
+    background-color: #337ab7;
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.examples {
+    margin-top: 20px;
+}
+
+.example {
+    background-color: gainsboro;
+    margin-bottom: 1em;
+    font-size: 16px;
+    /*padding: 2px;*/
+    padding-left: 20px;
+    border-radius: 5px;
+}
+
+.word-icon {
+    display: inline-block;
+    color: #2b62d2;
+}
+
+.word-type-label {
+    font-size: 15px;
+    margin-right: 0.4%;
+}
+
+.word {
+    padding: 10px 10px 2px;
+    margin-bottom: 15px;
+}
