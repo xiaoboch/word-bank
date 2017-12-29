@@ -6,13 +6,53 @@
     width: auto;
     display: inline-block;
     margin-left: 0.5em;
+    margin-right: 1em;
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
 }
 
+.word-etymology {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 2px 5px 2px 5px;
+    color: white;
+    background: #e17b4c;
+    border-radius: 3px;
+}
+
+.word-roots {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.word-root-item {
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    background-color: #792fb6e6;
+    display: inline-block;
+}
+
+.word-arrow-right {
+    display: inline-block;
+    margin: 0 5px 0 5px;
+}
+
+.word-root {
+}
+
+.word-etymology-root-explain {
+
+}
+
+.word-etymology-root-explain {
+
+}
+
 .word-interpretation {
     margin-top: 3px;
+    margin-left: 27px;
 }
 
 .explain {
@@ -31,9 +71,9 @@
 .example {
     background-color: gainsboro;
     margin-bottom: 1em;
-    font-size: 16px;
-    /*padding: 2px;*/
-    padding-left: 20px;
+    font-size: 18px;
+    color: #000000b3;
+    padding-left: 3px;
     border-radius: 5px;
 }
 
@@ -50,4 +90,16 @@
 .word {
     padding: 10px 10px 2px;
     margin-bottom: 15px;
+}
+
+.interpretation-editor {
+    margin-top: 10px;
+}
+
+.type-radio-selector {
+    margin-top: 16px;
+}
+
+add-new-example-btn {
+    border-radius: 50%;
 }
